@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F7F1E8">
+<title>The Melt Club — Book a class</title>
+<meta name="description" content="Reformer and mat Pilates. Book your class and choose your reformer in under a minute.">
+<meta property="og:title" content="The Melt Club — Something worth stretching for.">
+<meta property="og:description" content="Reformer & mat Pilates. Book your class and pick your reformer.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://abdell-el.github.io/melt-club/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Manrope:wght@400;500;600&family=Unbounded:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ivory:#F7F1E8;
+  --parchment:#EFE5D6;
+  --linen:#E6D8C4;
+  --camel:#C4A07A;
+  --gold:#B89A6A;
+  --apricot:#EBBE9C;
+  --blush:#F3D9C6;
+  --terra:#B0603F;
+  --claret:#5A1A24;
+  --claret-deep:#3B0F17;
+  --ink:#3A201C;
+  --muted:#8A7266;
+  --faint:#B3A090;
+  --line:#DCCBB5;
+  --ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ivory);color:var(--ink);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.6;padding-bottom:110px;overflow-x:hidden}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:1.5px solid var(--claret);outline-offset:3px;border-radius:6px}
+.wrap{max-width:560px;margin:0 auto;padding:0 22px}
+
+/* ================= HERO: ivory, a soft apricot sun ================= */
+.hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;color:var(--claret);
+  background:radial-gradient(110% 70% at 50% 38%,#FBF5EC 0%,var(--ivory) 45%,var(--parchment) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:84px 22px 46px;text-align:center}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .32 0 0 0 0 .25 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.streak{position:absolute;z-index:-1;left:-30%;width:160%;height:110px;border-radius:50%;filter:blur(40px);pointer-events:none}
+.streak.a{top:66%;background:linear-gradient(90deg,transparent,var(--blush) 30%,var(--apricot) 55%,transparent);opacity:.55;transform:rotate(-8deg);animation:drift 16s ease-in-out infinite alternate}
+.streak.b{top:76%;height:60px;background:linear-gradient(90deg,transparent,#E9C9C1 45%,transparent 70%);opacity:.5;transform:rotate(-5deg);animation:drift 20s ease-in-out -6s infinite alternate-reverse}
+@keyframes drift{from{translate:-8% 0}to{translate:8% 0}}
+.topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 22px;z-index:3}
+.mini{font-family:Manrope,sans-serif;font-weight:500;font-size:.625rem;letter-spacing:.34em;color:var(--claret)}
+.mini b{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:800;letter-spacing:0;font-size:1.05rem;margin:0 6px;vertical-align:-1px}
+.lang{display:flex;border:1px solid var(--line);border-radius:20px;padding:3px;gap:2px;background:rgba(255,255,255,.35)}
+.lang button{background:none;border:0;padding:4px 11px;font-size:.75rem;cursor:pointer;color:var(--muted);border-radius:16px}
+.lang button[aria-pressed="true"]{background:var(--claret);color:var(--ivory)}
+
+.sun{position:relative;width:min(380px,88vw);aspect-ratio:1;display:grid;place-items:center}
+.disc{position:absolute;inset:7%;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,#FFF4E6 0%,#F9DFC7 30%,var(--apricot) 62%,rgba(235,190,156,.0) 100%);
+  filter:blur(2px);box-shadow:0 0 140px 40px rgba(235,190,156,.35);transform:scale(.2);opacity:0}
+.ready .disc{animation:rise 2s var(--ease) .1s forwards,breathe 8s ease-in-out 2.2s infinite}
+@keyframes rise{to{transform:scale(1);opacity:1}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.orbit{position:absolute;inset:-4%;opacity:0}
+.ready .orbit{animation:fade 1.6s ease 1.6s forwards}
+.orbit svg{width:100%;height:100%;animation:spin 110s linear infinite}
+.orbit circle{stroke:var(--gold)!important;stroke-opacity:.55}
+.orbit text{font-family:Manrope,sans-serif;font-weight:500;font-size:6.6px;letter-spacing:.34em;fill:var(--claret);fill-opacity:.6}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fade{to{opacity:1}}
+.word{position:relative;width:100%;z-index:2}
+.word svg{width:100%;height:auto;overflow:visible;display:block}
+.word .the,.word .club{font-family:Manrope,sans-serif;font-weight:500;letter-spacing:.55em;fill:var(--claret);font-size:13px}
+.word .melt{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;font-weight:800;fill:var(--claret);font-size:150px;letter-spacing:-6px}
+.word .deg{fill:none;stroke:var(--claret);stroke-width:4.5}
+.breath{position:absolute;bottom:8%;left:0;right:0;z-index:2;font-family:Fraunces,serif;font-style:italic;font-size:.875rem;color:var(--claret);opacity:0;transition:opacity 1s}
+.ready .breath{opacity:.55;transition-delay:2.4s}
+
+.hero h1{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 72;font-weight:300;font-style:italic;font-size:clamp(2rem,8.5vw,2.7rem);line-height:1.08;margin-top:28px;color:var(--claret);opacity:0;transform:translateY(12px)}
+.hero .lead{margin-top:12px;max-width:32ch;color:var(--muted);font-size:.9375rem;opacity:0;transform:translateY(12px)}
+.hero.ready h1{animation:up 1s var(--ease) 1.5s forwards}
+.hero.ready .lead{animation:up 1s var(--ease) 1.65s forwards}
+.go{margin-top:28px;display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:40px;border:0;cursor:pointer;background:var(--claret);color:var(--ivory);font-weight:500;letter-spacing:.01em;opacity:0;transform:translateY(12px);transition:background .3s;box-shadow:0 10px 24px -10px rgba(90,26,36,.5)}
+.go:hover{background:var(--claret-deep)}
+.go i{width:7px;height:7px;border-radius:50%;background:var(--apricot);box-shadow:0 0 0 0 rgba(235,190,156,.7);animation:pulse 2.6s infinite}
+.ready .go{animation:up 1s var(--ease) 1.8s forwards}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(235,190,156,0)}100%{box-shadow:0 0 0 0 rgba(235,190,156,0)}}
+
+/* ================= CONTENT ================= */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;text-align:center;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.pillars div{padding:4px 6px}
+.pillars svg{width:50px;height:50px;display:block;margin:0 auto 10px}
+.pillars svg *{fill:none;stroke:var(--gold);stroke-width:.9}
+.pillars svg circle[r="1.6"]{fill:var(--gold)!important;stroke:none}
+.pillars b{display:block;font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;font-weight:500;font-size:1.05rem;color:var(--claret)}
+.pillars span{font-size:.8125rem;color:var(--muted);line-height:1.3;display:block}
+
+section{margin-top:60px;scroll-margin-top:16px}
+h2{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 72;font-weight:300;font-size:2.1rem;line-height:1.1;color:var(--claret);display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+h2 .n{font-family:Fraunces,serif;font-style:italic;font-weight:400;font-size:.9375rem;color:var(--camel);flex:none}
+
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 56px;padding:11px 0 9px;border:1px solid var(--line);background:transparent;border-radius:28px;cursor:pointer;text-align:center;transition:background .35s,color .35s,border-color .35s}
+.day small{display:block;font-size:.6875rem;color:var(--muted)}
+.day b{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;font-weight:400;font-size:1.35rem;line-height:1.2}
+.day[aria-pressed="true"]{background:var(--claret);border-color:var(--claret);color:var(--ivory)}
+.day[aria-pressed="true"] small{color:var(--apricot)}
+
+.classes{display:grid;gap:10px;margin-top:8px}
+.cls{position:relative;display:grid;grid-template-columns:62px 1fr auto;gap:2px 14px;align-items:center;text-align:left;padding:17px 16px;border:1px solid var(--line);border-radius:20px;background:#FBF7F1;cursor:pointer;overflow:hidden;transition:border-color .35s,transform .3s var(--ease),box-shadow .35s}
+.cls::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(243,217,198,.7),rgba(243,217,198,.15) 60%,transparent);opacity:0;transition:opacity .45s}
+.cls:active{transform:scale(.985)}
+.cls>*{position:relative}
+.cls time{grid-row:1/3;font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;font-size:1.35rem;font-weight:400;line-height:1;color:var(--claret)}
+.cls time small{display:block;font-family:Manrope,sans-serif;font-size:.6875rem;color:var(--muted);margin-top:4px}
+.cls .t{font-weight:600;font-size:1rem}
+.cls .d{font-size:.8125rem;color:var(--muted);grid-column:2}
+.cls .spots{grid-row:1/3;grid-column:3;text-align:right;font-size:.75rem;color:var(--muted);white-space:nowrap}
+.cls .spots i{display:flex;gap:3px;justify-content:flex-end;margin-bottom:5px}
+.cls .spots i span{width:5px;height:5px;border-radius:50%;background:var(--line)}
+.cls .spots i span.f{background:var(--camel)}
+.cls .spots.low{color:var(--terra)}
+.cls[aria-pressed="true"]{border-color:var(--camel);box-shadow:0 10px 26px -16px rgba(90,26,36,.35)}
+.cls[aria-pressed="true"]::before{opacity:1}
+.cls:disabled{opacity:.5;cursor:not-allowed}
+.classes.anim .cls{animation:in .5s var(--ease) both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+.note{color:var(--faint);font-size:.8125rem;margin-top:12px;font-style:italic}
+
+/* ---- studio floor ---- */
+.reveal{display:grid;grid-template-rows:0fr;transition:grid-template-rows .65s var(--ease)}
+.reveal>div{overflow:hidden}
+.reveal.on{grid-template-rows:1fr}
+.floor{position:relative;padding:20px 16px 18px;border-radius:24px;background:#FBF7F1;border:1px solid var(--line)}
+.mirror{height:5px;border-radius:3px;background:linear-gradient(90deg,#D6C3A8,#FBF6EE 45%,#D6C3A8);margin:0 6% 6px}
+.mirror-l{text-align:center;font-size:.6875rem;color:var(--faint);margin-bottom:12px;font-style:italic}
+.coach{display:flex;justify-content:center;margin-bottom:18px}
+.coach span{display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--muted);padding:5px 12px 5px 5px;border-radius:20px;background:var(--parchment)}
+.coach i{width:22px;height:22px;border-radius:50%;background:var(--claret);display:grid;place-items:center;font-style:normal;font-family:Fraunces,serif;font-size:.6875rem;color:var(--ivory)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px 8px}
+.spot{position:relative;aspect-ratio:.42;border-radius:14px;border:1px solid var(--camel);background:var(--ivory);cursor:pointer;padding:0;overflow:hidden;transition:border-color .35s,background .35s,transform .25s var(--ease)}
+.spot::before{content:"";position:absolute;left:22%;right:22%;top:12%;bottom:12%;border-radius:7px;border:1px solid var(--line)}
+.spot .car{position:absolute;left:16%;right:16%;top:16%;height:26%;border-radius:8px;background:var(--linen);transition:transform .8s var(--ease),background .35s}
+.spot .num{position:absolute;left:0;right:0;bottom:6px;font-family:Fraunces,serif;font-size:.75rem;color:var(--muted);text-align:center}
+.spot:disabled{cursor:not-allowed;border-color:var(--line);background:var(--parchment);opacity:.42}
+.spot:disabled .car{background:var(--line)}
+.spot:not(:disabled):active{transform:scale(.95)}
+.spot[aria-pressed="true"]{border-color:var(--claret);background:linear-gradient(180deg,#FCEDE0,var(--blush))}
+.spot[aria-pressed="true"] .car{background:var(--claret);transform:translateY(118%)}
+.spot[aria-pressed="true"] .num{color:var(--claret);font-weight:600}
+.spot.mat{aspect-ratio:.5}
+.spot.mat::before{left:12%;right:12%;top:8%;bottom:20%;border-radius:5px;background:var(--linen);border:0}
+.spot.mat .car{display:none}
+.spot.mat[aria-pressed="true"]::before{background:var(--claret)}
+.legend{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:.75rem;color:var(--muted)}
+.legend b{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;font-style:italic;font-weight:400;font-size:1.1rem;color:var(--claret)}
+
+/* ---- pass ---- */
+.passes{display:grid;gap:10px}
+.pass{position:relative;display:grid;grid-template-columns:22px 1fr auto;gap:2px 14px;align-items:center;text-align:left;padding:17px 16px;border:1px solid var(--line);border-radius:20px;background:#FBF7F1;cursor:pointer;transition:border-color .35s,background .35s}
+.pass .r{grid-row:1/3;width:20px;height:20px;border-radius:50%;border:1px solid var(--camel);display:grid;place-items:center}
+.pass .r::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--claret);transform:scale(0);transition:transform .4s var(--ease)}
+.pass .t{font-weight:600}
+.pass .d{font-size:.8125rem;color:var(--muted);grid-column:2}
+.pass .p{grid-row:1/3;grid-column:3;font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;font-size:1.2rem;color:var(--claret);white-space:nowrap}
+.pass .p small{font-family:Manrope,sans-serif;font-size:.75rem;color:var(--muted);margin-left:3px}
+.pass .tag{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:10px;border:1px solid var(--camel);color:var(--terra);font-size:.6875rem;font-weight:500;vertical-align:1px}
+.pass[aria-pressed="true"]{border-color:var(--camel);background:#FCF0E5}
+.pass[aria-pressed="true"] .r::after{transform:scale(1)}
+
+.field{position:relative;margin-top:14px}
+.field input{width:100%;padding:22px 16px 8px;border:1px solid var(--line);border-radius:16px;background:#FBF7F1;transition:border-color .25s}
+.field label{position:absolute;left:17px;top:15px;color:var(--muted);pointer-events:none;transition:all .2s var(--ease)}
+.field input:focus{border-color:var(--camel);outline:none}
+.field input:focus+label,.field input:not(:placeholder-shown)+label{top:6px;font-size:.75rem;color:var(--terra)}
+
+/* ---- dock ---- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 12px calc(10px + env(safe-area-inset-bottom));transform:translateY(120%);transition:transform .6s var(--ease)}
+.dock.on{transform:none}
+.dock .in{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 20px;border-radius:40px;background:rgba(90,26,36,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ivory);box-shadow:0 16px 34px -12px rgba(59,15,23,.45)}
+.summary{flex:1;min-width:0;font-size:.8125rem;color:rgba(247,241,232,.7);line-height:1.3}
+.summary b{display:block;color:var(--ivory);font-weight:600;font-size:.9375rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cta{min-width:112px;padding:13px 20px;border:0;border-radius:30px;background:var(--ivory);color:var(--claret);font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .3s,background .3s;white-space:nowrap}
+.cta:not(:disabled):hover{background:#fff}
+.cta:disabled{opacity:.35;cursor:not-allowed}
+.spin{width:15px;height:15px;border:2px solid rgba(90,26,36,.25);border-top-color:var(--claret);border-radius:50%;animation:spinr .7s linear infinite}
+@keyframes spinr{to{transform:rotate(360deg)}}
+
+/* ---- confirmation: claret evening, apricot sunrise ---- */
+.done{position:fixed;inset:0;z-index:40;overflow:hidden auto;display:flex;justify-content:center;padding:28px 22px;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;
+  background:radial-gradient(120% 70% at 50% 120%,#7A2C2E,var(--claret) 50%,var(--claret-deep) 90%);color:var(--ivory)}
+.done.on{opacity:1;visibility:visible}
+.done .sunrise{position:fixed;left:50%;bottom:-40vw;width:120vw;max-width:900px;aspect-ratio:1;margin-left:min(-60vw,-450px);border-radius:50%;
+  background:radial-gradient(circle,#FFF1E2,var(--apricot) 35%,rgba(235,190,156,.4) 55%,rgba(235,190,156,0) 70%);opacity:0;transform:translateY(30%);pointer-events:none}
+.done.on .sunrise{animation:sunrise 2.4s var(--ease) forwards}
+@keyframes sunrise{to{opacity:.45;transform:none}}
+.done .inner{position:relative;max-width:400px;width:100%;margin:auto 0}
+.done h3{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100,"opsz" 144;font-weight:300;font-style:italic;font-size:clamp(3.2rem,15vw,4.2rem);line-height:.95;text-align:center;opacity:0;filter:blur(12px)}
+.done.on h3{animation:unblur 1.3s var(--ease) .3s forwards}
+@keyframes unblur{to{opacity:1;filter:blur(0)}}
+.done .sub{text-align:center;color:rgba(247,241,232,.72);margin-top:8px}
+.ticket{margin-top:26px;border-radius:24px;background:var(--ivory);color:var(--ink);overflow:hidden;opacity:0;transform:translateY(30px)}
+.done.on .ticket{animation:up .9s var(--ease) .7s forwards}
+.ticket .head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:linear-gradient(100deg,#FCEDE0,var(--blush));border-bottom:1px solid var(--line)}
+.ticket .head b{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;font-weight:400;font-size:1.3rem;color:var(--claret)}
+.ticket .head span{font-size:.75rem;color:var(--terra)}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;padding:16px 18px;font-size:.9375rem}
+.ticket dt{color:var(--muted)}
+.ticket dd{text-align:right}
+.ticket .ref{display:flex;justify-content:space-between;padding:12px 18px;border-top:1px dashed var(--line);font-size:.8125rem;color:var(--muted)}
+.ticket .ref b{color:var(--claret);font-weight:600;letter-spacing:.04em}
+.wa{margin-top:14px;background:#0E1A17;border-radius:16px;padding:12px;opacity:0;transform:translateY(12px)}
+.done.on .wa{animation:up .6s var(--ease) 1.3s forwards}
+.wa .who{font-size:.75rem;color:#8FA9A0;margin-bottom:8px}
+.bubble{background:#1E3A32;color:#E8F1EE;border-radius:3px 10px 10px 10px;padding:10px 12px 18px;font-size:.875rem;line-height:1.45;position:relative;white-space:pre-line}
+.bubble time{position:absolute;right:10px;bottom:4px;font-size:.6875rem;color:#8FA9A0}
+.actions{display:flex;gap:10px;margin-top:16px}
+.actions button{padding:13px 10px;border-radius:30px;cursor:pointer;font-size:.9375rem;white-space:nowrap}
+.actions .primary{flex:1.5;background:var(--ivory);color:var(--claret);border:0;font-weight:600}
+.actions .ghost{flex:1;background:none;border:1px solid rgba(247,241,232,.35);color:var(--ivory)}
+
+footer{margin-top:64px;color:var(--faint);font-size:.8125rem;text-align:center;font-style:italic}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .disc,.orbit,.hero h1,.hero .lead,.go,.ticket,.wa,.done h3{opacity:1;transform:none;filter:none}
+  .done .sunrise{opacity:.45;transform:none}
+}
+</style>
+</head>
+<body>
+<header class="hero" id="hero">
+  <span class="streak a" aria-hidden="true"></span><span class="streak b" aria-hidden="true"></span>
+  <div class="topbar">
+    <span class="mini">THE<b>melt°</b>CLUB</span>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button data-lang="en" aria-pressed="true">EN</button>
+      <button data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+
+  <div class="sun" aria-hidden="true">
+    <div class="disc" id="disc"></div>
+    <div class="orbit">
+      <svg viewBox="0 0 200 200">
+        <defs><path id="ring" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#B89A6A" stroke-width=".4"/>
+        <text><textPath href="#ring" startOffset="0" id="orbitText" textLength="550" lengthAdjust="spacing"></textPath></text>
+      </svg>
+    </div>
+    <div class="word">
+      <svg viewBox="0 0 400 230">
+        <defs>
+          <filter id="melt" x="-10%" y="-20%" width="120%" height="160%">
+            <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.004 0.045" numOctaves="2" seed="7" result="n"/>
+            <feDisplacementMap id="disp" in="SourceGraphic" in2="n" scale="90" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g filter="url(#melt)">
+          <text class="the" x="200" y="62" text-anchor="middle">THE</text>
+          <text class="melt" x="196" y="168" text-anchor="middle">melt</text>
+          <circle class="deg" cx="338" cy="78" r="9"/>
+          <text class="club" x="200" y="200" text-anchor="middle">CLUB</text>
+        </g>
+      </svg>
+    </div>
+    <p class="breath" id="breath"></p>
+  </div>
+
+  <h1 data-i="h1"></h1>
+  <p class="lead" data-i="lead"></p>
+  <button class="go" id="go"><i></i><span data-i="go"></span></button>
+</header>
+
+<div class="wrap">
+  <div class="pillars">
+    <div>
+      <svg viewBox="0 0 54 54"><circle cx="27" cy="19" r="12"/><circle cx="20" cy="31" r="12"/><circle cx="34" cy="31" r="12"/></svg>
+      <b data-i="p1a"></b><span data-i="p1b"></span>
+    </div>
+    <div>
+      <svg viewBox="0 0 54 54"><path d="M12 12L42 42M42 12L12 42"/><circle cx="27" cy="27" r="9"/><circle cx="12" cy="12" r="1.6"/><circle cx="42" cy="12" r="1.6"/><circle cx="12" cy="42" r="1.6"/><circle cx="42" cy="42" r="1.6"/></svg>
+      <b data-i="p2a"></b><span data-i="p2b"></span>
+    </div>
+    <div>
+      <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="18"/><path d="M27 9v4M27 41v4M9 27h4M41 27h4"/><circle cx="27" cy="27" r="3"/></svg>
+      <b data-i="p3a"></b><span data-i="p3b"></span>
+    </div>
+  </div>
+
+  <section id="s1">
+    <h2><span class="n">01</span><span data-i="step1"></span></h2>
+    <div class="days" id="days"></div>
+    <div class="classes" id="classes"></div>
+    <p class="note" data-i="sample"></p>
+  </section>
+
+  <div class="reveal" id="floorWrap"><div>
+    <section>
+      <h2><span class="n">02</span><span id="floorTitle"></span></h2>
+      <div class="floor">
+        <div class="mirror"></div>
+        <p class="mirror-l" data-i="mirror"></p>
+        <div class="coach"><span><i id="coachI"></i><span id="coachN"></span></span></div>
+        <div class="grid" id="grid"></div>
+      </div>
+      <div class="legend"><span data-i="spotHint"></span><b id="spotName"></b></div>
+    </section>
+  </div></div>
+
+  <section>
+    <h2><span class="n">03</span><span data-i="step3"></span></h2>
+    <div class="passes" id="passes"></div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span><span data-i="step4"></span></h2>
+    <div class="field"><input id="name" autocomplete="name" placeholder=" "><label for="name" data-i="name"></label></div>
+    <div class="field"><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" "><label for="phone" data-i="phone"></label></div>
+  </section>
+
+  <footer data-i="footer"></footer>
+</div>
+
+<div class="dock" id="dock"><div class="in">
+  <div class="summary" id="summary"></div>
+  <button class="cta" id="book" disabled><span data-i="book"></span></button>
+</div></div>
+
+<div class="done" id="done" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+  <div class="sunrise" aria-hidden="true"></div>
+  <div class="inner">
+    <h3 id="doneTitle" data-i="booked"></h3>
+    <p class="sub" data-i="bookedSub"></p>
+    <div class="ticket">
+      <div class="head"><b id="tClass"></b><span id="tSpot"></span></div>
+      <dl id="details"></dl>
+      <div class="ref"><span data-i="refLabel"></span><b id="ref"></b></div>
+    </div>
+    <div class="wa"><div class="who" data-i="waFrom"></div><div class="bubble" id="bubble"></div></div>
+    <div class="actions">
+      <button class="primary" id="ics" data-i="calendar"></button>
+      <button class="ghost" id="again" data-i="again"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+const COACH={y:"Yasmine",i:"Inès",s:"Sofia"};
+const KIND={
+  flow:{type:"reformer",min:50,coach:"y"},
+  sculpt:{type:"reformer",min:50,coach:"i"},
+  mat:{type:"mat",min:45,coach:"s"},
+  stretch:{type:"mat",min:40,coach:"y"},
+  jump:{type:"reformer",min:45,coach:"i"}
+};
+const PLAN={1:[["07:30","flow"],["12:30","mat"],["18:00","sculpt"],["19:30","stretch"]],
+  2:[["08:00","sculpt"],["13:00","flow"],["18:30","jump"]],
+  3:[["07:30","flow"],["12:30","stretch"],["18:00","flow"],["19:30","mat"]],
+  4:[["08:00","jump"],["13:00","mat"],["18:30","sculpt"]],
+  5:[["07:30","flow"],["12:30","sculpt"],["18:00","stretch"]],
+  6:[["09:30","flow"],["11:00","mat"],["12:30","sculpt"]],
+  0:[["10:00","stretch"],["11:30","flow"]]};
+const PASSES=[{id:"trial",p:150},{id:"single",p:250},{id:"ten",p:2000}];
+const CAP=10;
+const T={
+  en:{locale:"en-GB",
+    orbit:"MIND · BODY · BALANCE · BREATH · ALIGN · FLOW · RESET · ",
+    inhale:"inhale",exhale:"exhale",
+    h1:"Something worth stretching for.",lead:"Reformer and mat Pilates in small groups. Book your class and choose your reformer in under a minute.",go:"Book your first class",
+    p1a:"Reformer & mat",p1b:"All levels welcome",p2a:"10 people max",p2b:"Every class",p3a:"WhatsApp",p3b:"Instant confirmation",
+    step1:"Pick a class",step3:"Your pass",step4:"Your details",
+    sample:"Mockup: classes, coaches and prices are examples.",
+    floorR:"Choose your reformer",floorM:"Choose your mat",mirror:"Mirror wall",spotHint:"Your spot",
+    with:n=>`with ${n}`,spotsLeft:n=>n===0?"Full":n===1?"1 spot left":`${n} spots left`,
+    reformerN:n=>`Reformer ${n}`,matN:n=>`Mat ${n}`,pick:"Tap a free spot",
+    cls:{flow:["Reformer Flow","All levels"],sculpt:["Reformer Sculpt","Intermediate"],mat:["Mat Foundations","Beginners"],stretch:["Melt & Stretch","Recovery"],jump:["Jumpboard Burn","Intermediate"]},
+    pass:{trial:["First class","New to the club","Welcome offer"],single:["Single class","Drop in anytime",""],ten:["Pack of 10","Valid 3 months","Best value"]},
+    name:"Full name",phone:"WhatsApp number",
+    footer:"Mockup designed by System Unity. Content shown as examples.",
+    book:"Book",busy:"Booking…",booked:"You're in.",bookedSub:"See you on the reformer.",
+    refLabel:"Booking reference",waFrom:"The Melt Club, on WhatsApp",calendar:"Add to calendar",again:"Back",
+    dDate:"Date",dTime:"Time",dCoach:"Coach",dPass:"Pass",dPrice:"Total",
+    pickClass:"Pick a class",pickSpot:"Choose your spot",
+    wa:(n,c,d,t,s,r)=>`Hi ${n},\nYou're booked for ${c} on ${d} at ${t}. Your spot: ${s}.\nReference ${r}\n\nArrive 10 minutes early and bring grip socks. See you soon.`
+  },
+  fr:{locale:"fr-FR",
+    orbit:"MIND · BODY · BALANCE · BREATH · ALIGN · FLOW · RESET · ",
+    inhale:"inspirez",exhale:"expirez",
+    h1:"Something worth stretching for.",lead:"Pilates reformer et mat en petits groupes. Réservez votre cours et choisissez votre reformer en moins d'une minute.",go:"Réserver mon premier cours",
+    p1a:"Reformer & mat",p1b:"Tous niveaux",p2a:"10 personnes max",p2b:"À chaque cours",p3a:"WhatsApp",p3b:"Confirmation immédiate",
+    step1:"Choisissez un cours",step3:"Votre formule",step4:"Vos coordonnées",
+    sample:"Maquette : cours, coachs et tarifs donnés à titre d'exemple.",
+    floorR:"Choisissez votre reformer",floorM:"Choisissez votre tapis",mirror:"Mur miroir",spotHint:"Votre place",
+    with:n=>`avec ${n}`,spotsLeft:n=>n===0?"Complet":n===1?"1 place":`${n} places`,
+    reformerN:n=>`Reformer ${n}`,matN:n=>`Tapis ${n}`,pick:"Touchez une place libre",
+    cls:{flow:["Reformer Flow","Tous niveaux"],sculpt:["Reformer Sculpt","Intermédiaire"],mat:["Mat Foundations","Débutant"],stretch:["Melt & Stretch","Récupération"],jump:["Jumpboard Burn","Intermédiaire"]},
+    pass:{trial:["Premier cours","Nouveau au club","Offre de bienvenue"],single:["Cours à l'unité","Sans engagement",""],ten:["Carnet de 10","Valable 3 mois","Le plus avantageux"]},
+    name:"Nom complet",phone:"Numéro WhatsApp",
+    footer:"Maquette conçue par System Unity. Contenus donnés à titre d'exemple.",
+    book:"Réserver",busy:"Réservation…",booked:"C'est réservé.",bookedSub:"On se retrouve sur le reformer.",
+    refLabel:"Référence",waFrom:"The Melt Club, sur WhatsApp",calendar:"Ajouter au calendrier",again:"Retour",
+    dDate:"Date",dTime:"Heure",dCoach:"Coach",dPass:"Formule",dPrice:"Total",
+    pickClass:"Choisissez un cours",pickSpot:"Choisissez votre place",
+    wa:(n,c,d,t,s,r)=>`Bonjour ${n},\nVotre cours ${c} est réservé pour ${d} à ${t}. Votre place : ${s}.\nRéférence ${r}\n\nArrivez 10 minutes avant et pensez à vos chaussettes antidérapantes. À très vite.`
+  }
+};
+const state={lang:"en",day:0,cls:null,spot:null,pass:"trial"};
+const $=id=>document.getElementById(id);
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const days=[...Array(10)].map((_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+i);return d});
+try{const s=localStorage.getItem("melt-lang");if(s&&T[s])state.lang=s}catch(e){}
+const L=()=>T[state.lang];
+const fr=s=>state.lang==="fr"?s.replace(/ ([?!:;])/g," $1"):s;
+const longD=d=>d.toLocaleDateString(L().locale,{weekday:"long",day:"numeric",month:"long"});
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function classesFor(i){const d=days[i];return (PLAN[d.getDay()]||[]).map(([t,k],j)=>({key:`${i}-${j}`,t,k}))}
+function takenSet(key){const s=new Set();let h=0;for(const c of key)h=h*31+c.charCodeAt(0);const n=4+(h%6);let x=h;while(s.size<Math.min(n,CAP)){x=(x*1103515245+12345)&0x7fffffff;s.add(1+(x%CAP))}return s}
+const cur=()=>classesFor(state.day).find(c=>c.key===state.cls);
+
+function renderStatic(){
+  const l=L();
+  document.documentElement.lang=state.lang;
+  document.querySelectorAll("[data-i]").forEach(el=>{el.textContent=fr(l[el.dataset.i])});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===state.lang));
+  $("orbitText").textContent=l.orbit;
+}
+function renderDays(){
+  const l=L();
+  $("days").innerHTML=days.map((d,i)=>`<button class="day" data-d="${i}" aria-pressed="${state.day===i}"><small>${d.toLocaleDateString(l.locale,{weekday:"short"}).replace(".","")}</small><b>${d.getDate()}</b></button>`).join("");
+}
+function renderClasses(anim){
+  const l=L(),el=$("classes");
+  el.innerHTML=classesFor(state.day).map((c,i)=>{
+    const k=KIND[c.k],free=CAP-takenSet(c.key).size,[name,lvl]=l.cls[c.k];
+    const dots=Array.from({length:CAP},(_,j)=>`<span class="${j<CAP-free?"f":""}"></span>`).join("");
+    return `<button class="cls" style="animation-delay:${i*60}ms" data-c="${c.key}" aria-pressed="${state.cls===c.key}" ${free===0?"disabled":""}>
+      <time>${c.t}<small>${k.min} min</small></time><span class="t">${name}</span><span class="d">${lvl} · ${l.with(COACH[k.coach])}</span>
+      <span class="spots${free<=2?" low":""}"><i>${dots}</i>${l.spotsLeft(free)}</span></button>`;
+  }).join("");
+  if(anim&&!reduce){el.classList.remove("anim");void el.offsetWidth;el.classList.add("anim")}
+}
+function renderFloor(){
+  const l=L(),c=cur();
+  $("floorWrap").classList.toggle("on",!!c);
+  if(!c)return;
+  const k=KIND[c.k],taken=takenSet(c.key),mat=k.type==="mat";
+  $("floorTitle").textContent=mat?l.floorM:l.floorR;
+  $("coachI").textContent=COACH[k.coach][0];$("coachN").textContent=COACH[k.coach];
+  $("grid").innerHTML=Array.from({length:CAP},(_,j)=>{const n=j+1,t=taken.has(n);
+    return `<button class="spot${mat?" mat":""}" data-s="${n}" ${t?"disabled":""} aria-pressed="${state.spot===n}" aria-label="${mat?l.matN(n):l.reformerN(n)}"><span class="car"></span><span class="num">${n}</span></button>`}).join("");
+  $("spotName").textContent=state.spot?(mat?l.matN(state.spot):l.reformerN(state.spot)):l.pick;
+}
+function renderPasses(){
+  const l=L();
+  $("passes").innerHTML=PASSES.map(p=>{const [t,d,tag]=l.pass[p.id];
+    return `<button class="pass" data-p="${p.id}" aria-pressed="${state.pass===p.id}"><span class="r"></span><span class="t">${t}${tag?`<span class="tag">${tag}</span>`:""}</span><span class="d">${d}</span><span class="p">${p.p.toLocaleString("fr-FR")}<small>MAD</small></span></button>`}).join("");
+}
+function ready(){return state.cls&&state.spot&&$("name").value.trim().length>1&&$("phone").value.replace(/\D/g,"").length>=9}
+function spotLabel(){const c=cur();return KIND[c.k].type==="mat"?L().matN(state.spot):L().reformerN(state.spot)}
+function renderDock(){
+  const l=L(),c=cur();
+  $("dock").classList.toggle("on",!!c);
+  if(c){
+    const name=l.cls[c.k][0],line=state.spot?`${cap(days[state.day].toLocaleDateString(l.locale,{weekday:"short",day:"numeric"}).replace(".",""))}, ${c.t} · ${spotLabel()}`:l.pickSpot;
+    $("summary").innerHTML=`<b>${name}</b>${line}`;
+  }
+  $("book").disabled=!ready();
+}
+function renderAll(){renderStatic();renderDays();renderClasses(false);renderFloor();renderPasses();renderDock()}
+
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.lang){state.lang=b.dataset.lang;try{localStorage.setItem("melt-lang",state.lang)}catch(_){};renderAll()}
+  else if(b.dataset.d){state.day=+b.dataset.d;state.cls=null;state.spot=null;renderDays();renderClasses(true);renderFloor();renderDock()}
+  else if(b.dataset.c){if(state.cls!==b.dataset.c){state.cls=b.dataset.c;state.spot=null}renderClasses(false);renderFloor();renderDock()}
+  else if(b.dataset.s){state.spot=+b.dataset.s;renderFloor();renderDock()}
+  else if(b.dataset.p){state.pass=b.dataset.p;renderPasses()}
+});
+["name","phone"].forEach(id=>$(id).addEventListener("input",()=>{$("book").disabled=!ready()}));
+$("go").onclick=()=>$("s1").scrollIntoView({behavior:reduce?"auto":"smooth"});
+
+$("book").onclick=()=>{
+  const l=L(),btn=$("book"),c=cur(),k=KIND[c.k],p=PASSES.find(x=>x.id===state.pass);
+  btn.innerHTML=`<span class="spin"></span><span>${l.busy}</span>`;btn.disabled=true;
+  setTimeout(()=>{
+    state.ref="MC-"+String(Math.floor(1000+Math.random()*9000));
+    const name=l.cls[c.k][0],d=cap(longD(days[state.day]));
+    $("tClass").textContent=name;$("tSpot").textContent=spotLabel();
+    $("details").innerHTML=[[l.dDate,d],[l.dTime,`${c.t} · ${k.min} min`],[l.dCoach,COACH[k.coach]],[l.dPass,l.pass[p.id][0]],[l.dPrice,p.p.toLocaleString("fr-FR")+" MAD"]].map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("");
+    $("ref").textContent=state.ref;
+    $("bubble").textContent=fr(l.wa($("name").value.trim().split(/\s+/)[0],name,longD(days[state.day]),c.t,spotLabel(),state.ref));
+    $("bubble").insertAdjacentHTML("beforeend",`<time>${new Date().toLocaleTimeString(l.locale,{hour:"2-digit",minute:"2-digit"})}</time>`);
+    $("done").scrollTop=0;$("done").classList.add("on");
+    btn.innerHTML=`<span>${l.book}</span>`;btn.disabled=!ready();
+    setTimeout(()=>$("ics").focus({preventScroll:true}),60);
+  },reduce?0:900);
+};
+$("ics").onclick=()=>{
+  const l=L(),c=cur(),k=KIND[c.k],[h,m]=c.t.split(":").map(Number);
+  const st=new Date(days[state.day]);st.setHours(h,m);const en=new Date(st.getTime()+k.min*60000);
+  const f=d=>d.toISOString().replace(/[-:]/g,"").replace(/\.\d+/,"");
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//The Melt Club//Booking//EN","BEGIN:VEVENT",`UID:${state.ref}@meltclub`,`DTSTAMP:${f(new Date())}`,`DTSTART:${f(st)}`,`DTEND:${f(en)}`,
+    `SUMMARY:The Melt Club — ${l.cls[c.k][0]}`,`DESCRIPTION:${spotLabel()} · ${l.refLabel} ${state.ref}`,"END:VEVENT","END:VCALENDAR"].join("\r\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download=`melt-club-${state.ref}.ics`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+$("again").onclick=()=>{$("done").classList.remove("on");state.cls=null;state.spot=null;renderClasses(false);renderFloor();renderDock();$("s1").scrollIntoView({behavior:reduce?"auto":"smooth"})};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("done").classList.contains("on"))$("again").click()});
+
+/* ===== the melt: wordmark liquefies into place, re-melts with scroll speed ===== */
+renderAll();
+const disp=$("disp"),turb=$("turb");
+let melt=reduce?0:95,target=0,phase=0,lastY=scrollY,lastT=performance.now();
+requestAnimationFrame(()=>$("hero").classList.add("ready"));
+if(reduce){disp.setAttribute("scale","0")}
+else{
+  const t0=performance.now();
+  (function loop(now){
+    const intro=Math.min(1,(now-t0)/2400),introMelt=95*Math.pow(1-intro,3);
+    const dy=Math.abs(scrollY-lastY),dt=Math.max(16,now-lastT);lastY=scrollY;lastT=now;
+    if(scrollY<window.innerHeight*1.2)target=Math.min(60,target+dy/dt*14);
+    target*=.92;
+    melt=Math.max(introMelt,target);
+    phase+=.004+melt*.00025;
+    disp.setAttribute("scale",melt.toFixed(2));
+    turb.setAttribute("baseFrequency",`0.004 ${(0.045+Math.sin(phase)*0.006).toFixed(4)}`);
+    requestAnimationFrame(loop);
+  })(t0);
+}
+/* breath cue synced with the sun (8s cycle) */
+(function(){const el=$("breath");let i=0;const tick=()=>{el.textContent=i%2?L().exhale:L().inhale;i++};setTimeout(()=>{tick();if(!reduce)setInterval(tick,4000)},2000)})();
+</script>
+</body>
+</html>
